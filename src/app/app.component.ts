@@ -13,7 +13,7 @@ export class AppComponent implements AfterViewInit{
     logoImagePath: string;
 
     constructor(){
-      this.junaidImagePath = '/assets/junaid2.png';
+      this.junaidImagePath = '/assets/junaid.png';
       this.purpleLightsImagePath = '/assets/purple.png';
       this.blueLightsImagePath = '/assets/blue.png';
       this.logoImagePath = '/assets/4.png';
