@@ -1,4 +1,4 @@
-import { Component,AfterViewInit } from '@angular/core';
+import { Component,AfterViewInit, Renderer2} from '@angular/core';
 import * as Parallax from 'parallax-js';
 @Component({
   selector: 'app-root',
@@ -6,21 +6,17 @@ import * as Parallax from 'parallax-js';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements AfterViewInit{
-    junaidImagePath: string;
-    purpleLightsImagePath: string;
-    blueLightsImagePath: string;
 
-    logoImagePath: string;
 
-    constructor(){
-      this.junaidImagePath = '/assets/junaid.png';
-      this.purpleLightsImagePath = '/assets/purple.png';
-      this.blueLightsImagePath = '/assets/blue.png';
-      this.logoImagePath = '/assets/4.png';
+    constructor(private renderer: Renderer2){
+      
     }
 
   ngAfterViewInit(){
-    var scene = document.getElementById('scene');
-    var parallaxInstance = new Parallax(scene);
+    // for menu bar scroll
+    this.renderer.setAttribute(document.body,"data-spy","scroll");
+    this.renderer.setAttribute(document.body,"data-target",".navbar");
+    this.renderer.setAttribute(document.body,"data-offset","50");
   }
 }
+
